@@ -15,9 +15,9 @@ const resolvers = {
       }
     },
 
-    async fetchCar(_, { id }) {
+    async fetchCar(_, { car_id }) {
       try {
-        const car = await Car.query().where({ id }).fetch()
+        const car = await Car.query().where({ id: car_id }).fetch()
         return car.toJSON()
       } catch(err) {
         throw new Error('Nenhum carro encontrado com o ID informado.')
@@ -26,7 +26,7 @@ const resolvers = {
 
     async fetchMyRentCars(_, { id }) {
       try {
-        const myCars = await Car.query().where({ owner: id }).fetch()
+        const myCars = await Car.query().where({ user_id: id }).fetch()
         return myCars.toJSON()
       } catch(err) {
         throw new Error('Nenhum carro encontrado para o usuario informado.')

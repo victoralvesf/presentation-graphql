@@ -31,7 +31,7 @@ const typeDefs = `
   type Query {
     availableCarsToRent: [Car]
     fetchCar(id: Int!): Car
-    fetchMyRentCars(id: Int!): Car
+    fetchMyRentCars(id: Int!): [Car]
   }
 
   type Mutation {
