@@ -9,8 +9,8 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_DB: graphql
-      POSTGRES_USER: fortics
-      POSTGRES_PASSWORD: kvallo2019
+      POSTGRES_USER: graphql
+      POSTGRES_PASSWORD: 123456
     networks:
       - aplication-network
 
